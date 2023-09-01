@@ -9,6 +9,9 @@ export default function Calculator() {
 
   function inputNum(e) {
     var input = e.target.value
+    if (input === "." && num.includes(".")) {
+      return; 
+    }
     if(num === 0){
       setNum(input);
   }else{
