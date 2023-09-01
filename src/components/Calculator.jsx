@@ -7,6 +7,8 @@ export default function Calculator() {
   const [oldNum, setOldNum] = useState(0);
   const [operator, setOperator] = useState();
 
+  const maxNumLength = 8
+
   function inputNum(e) {
     var input = e.target.value
     if (input === "." && num.includes(".")) {
@@ -14,9 +16,9 @@ export default function Calculator() {
     }
     if(num === 0){
       setNum(input);
-  }else{
-      setNum(num + input)
-    }
+  }else if (num.length < maxNumLength) {
+    setNum(num + input);
+  }
   }
 
   function clear(e) {
